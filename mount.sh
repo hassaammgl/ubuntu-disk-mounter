@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt install nfs-common sifs-utils;
+
 # List all available NTFS partitions with names
 list_partitions() {
     echo "Available NTFS partitions:"
