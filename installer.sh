@@ -27,17 +27,15 @@ sudo systemctl start mongod
 
 
 # Download and install nvm:
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
 # Download and install Node.js:
-nvm install 23
-
+nvm install 24
 # Verify the Node.js version:
-node -v # Should print "v23.7.0".
-nvm current # Should print "v23.7.0".
-
+node -v # Should print "v24.11.0".
 # Verify npm version:
-npm -v # Should print "10.9.2".
+npm -v # Should print "11.6.1".
 
 # Download and install Yarn:
 corepack enable yarn
@@ -67,10 +65,7 @@ sudo dpkg -i ./*.deb
 
 
 sudo snap install vlc
-sudo snap install pieces-os
-sudo snap connect pieces-os:process-control :process-control
-sudo snap install pieces-for-developers
-sudo snap refresh
+
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -78,6 +73,3 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge sta
 sudo rm microsoft.gpg
 
 sudo apt update && sudo apt install microsoft-edge-stable
-
-pieces-os
-pieces-for-developers
